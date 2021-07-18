@@ -76,8 +76,8 @@ button:hover {
 }
 
 .button.cancel {
-  color: var(--red);
-  border: 2px var(--red) solid;
+  color: #fff;
+  background-color: var(--red);
   border-radius: 0.25rem;
   height: 50px;
   display: flex;
@@ -209,6 +209,7 @@ td.expense {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
+
   z-index: 999;
 }
 
@@ -219,9 +220,12 @@ td.expense {
 
 .modal {
   background: #f0f2f5;
+  border-radius: 0.25rem;
   padding: 2.4rem;
   width: 90%;
   max-width: 500px;
+  animation-name: fade;
+  animation-duration: 2s;
 }
 
 /* FORM =======================*/
@@ -242,6 +246,12 @@ td.expense {
 
 .input-group {
   margin-top: 0.8rem;
+  animation-name: move;
+  animation-duration: 2s;
+}
+
+input:focus {
+  outline: 0;
 }
 
 .input-group .help {
@@ -277,5 +287,29 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+}
+
+/* ANIMAÇÕES DO FORMULARIO =======================*/
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }

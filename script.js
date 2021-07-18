@@ -64,7 +64,13 @@ const Transaction = {
     },
 
     total() {
-        return Transaction.incomes() + Transaction.expenses();
+        let tot = Transaction.incomes() + Transaction.expenses();
+        if(tot < 0) {
+            document.querySelector('.total').style = "background-color: #e92929"
+        } else {
+            document.querySelector('.total').style = "background-color: #49aa26"
+        }
+        return tot
     }
 }
 
